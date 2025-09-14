@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Titulo</title>
+    <title>¡Feliz Día del Programador! 🎉</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono:wght@400&display=swap" rel="stylesheet">
     <style>
         body {
@@ -27,18 +27,96 @@
             text-align: center;
             animation: fadeIn 1s ease-out;
         }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
         h1 {
             color: #e67e22; /* Naranja vibrante */
             font-size: 2.5em;
             margin-bottom: 20px;
             font-weight: 700;
         }
+        p {
+            font-size: 1.1em;
+            line-height: 1.7;
+            margin-bottom: 25px;
+        }
+        .joke-section {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(236, 240, 241, 0.2);
+        }
+        .joke-question {
+            font-family: 'Roboto Mono', monospace;
+            font-size: 1.05em;
+            color: #9b59b6; /* Morado */
+            margin-bottom: 10px;
+        }
+        .joke-answer {
+            font-family: 'Roboto Mono', monospace;
+            font-size: 1.15em;
+            font-weight: bold;
+            color: #2ecc71; /* Verde */
+        }
+        .refresh-hint {
+            font-size: 0.8em;
+            color: #7f8c8d;
+            margin-top: 20px;
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Test dos</h1>
+        <h1>¡Feliz Día del Programador! 🎉</h1>
+        <p>Si bien nuestro código puede no ser perfecto, trabajamos para que cada línea sea mejor que la anterior. Agradezco su talento y dedicación, que hacen que cada reto valga la pena. Su esfuerzo y pasión son la clave de nuestro éxito. 😄🤌</p>
+        
+        <div class="joke-section">
+            <p id="joke-question" class="joke-question"></p>
+            <p id="joke-answer" class="joke-answer"></p>
+        </div>
     </div>
-</body>
 
+    <script>
+        const jokes = [
+            {
+                question: "¿Sabes cuál es el primer paso para comprender la recursión?",
+                answer: "Comprender la recursión."
+            },
+            {
+                question: "¿Sabes qué le dijo un int a un float?",
+                answer: "¡Deja de ser tan irracional!"
+            },
+            {
+                question: "¿Sabes cuándo una función se convierte en una mala inversión?",
+                answer: "Cuando no tiene retorno."
+            },
+            {
+                question: "¿Sabes que es un algoritmo?",
+                answer: "Es una palabra que usan los programadores cuando no quieren explicar lo que hicieron."
+            },
+            {
+                question: "¿Sabes cuántos programadores hacen falta para cambiar una bombilla?",
+                answer: "Ninguno, porque es un problema hardware."
+            },
+            {
+                question: "Dicen que el software, las iglesias y las catedrales son muy parecidos...",
+                answer: "Primero los construimos, luego rezamos."
+            },
+            {
+                question: "¿Sabes cuál es la forma orientada a objetos para volverse rico?",
+                answer: "Herencia."
+            }
+        ];
+
+        function displayRandomJoke() {
+            const randomIndex = Math.floor(Math.random() * jokes.length);
+            const randomJoke = jokes[randomIndex];
+            document.getElementById('joke-question').textContent = randomJoke.question;
+            document.getElementById('joke-answer').textContent = randomJoke.answer;
+        }
+        
+        window.onload = displayRandomJoke;
+    </script>
+</body>
 </html>
